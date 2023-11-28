@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-container {
+    flex: 1;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content-container {
+    flex: 1;
+    padding: 20px;
+}

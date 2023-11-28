@@ -1,0 +1,51 @@
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import aiqaiq from "../aiqaiq.jpg";
+import "../App.css";
+// import {FaAlignRight} from 'react-icons/fa'
+
+export default class Navbar extends Component {
+  state = {
+    isOpen: false,
+  };
+  handleToggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+  render() {
+    return (
+      <nav className="Navbar">
+        <div className="nav-centre">
+          <div className="nav-centre">
+            <Link to="/">
+              <img src={aiqaiq} alt="AIQ meeting room" width={25} height={25} />
+            </Link>
+            <button
+              type="buton"
+              className="nav-btn"
+              onClick={this.handleToggle}
+            >
+              {/* <FaAlignRight className="nav-icon" /> */}
+              <h1>my button</h1>
+            </button>
+            <ul
+              className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
+            >
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/rooms">Rooms</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+}
