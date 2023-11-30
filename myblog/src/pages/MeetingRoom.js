@@ -7,18 +7,14 @@ const MeetingRoom = ({ title }) => {
   if (error) return <div>Error: {error.message}</div>;
 
   // console.log(data);
-  data.map((item) => {
-    console.log(item.title);
-  });
 
   return (
     <div>
       <h1>Meeting Rooms</h1>
       <ul>
-        {data.map((item) => {
-          <li key={item.id}>{item.title}</li>;
-        })}
-        <li>ALKSJD</li>
+        {data.map((item) => (
+          <li key={item.id}>{item.title}</li>
+        ))}
       </ul>
     </div>
   );

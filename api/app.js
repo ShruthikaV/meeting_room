@@ -6,16 +6,28 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json([
+  const rooms = [
     {
       id: "1",
-      title: "Book you meeting time",
+      title: "Meeting Room 1",
     },
     {
       id: "2",
-      title: "Modify your timings",
+      title: "Meeting Room 2",
     },
-  ]);
+    {
+      id: "3",
+      title: "Meeting Room 3",
+    },
+    {
+      id: "4",
+      title: "Meeting Room 4",
+    },
+  ];
+
+  // const rooms = readFile("rooms.json")
+
+  res.json(rooms);
 });
 
 app.get("/health", (req, res) => {

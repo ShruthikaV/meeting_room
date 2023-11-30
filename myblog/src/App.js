@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home.js";
 import Blog from "./pages/Blog.js";
 import Login from "./pages/Login.js";
 import Room from "./pages/Room.js";
-import MeetingRoom from "./pages/MeetingRoom";
+import MeetingRoom from "./pages/MeetingRoom.js";
+import MeetingRoomPic from "./meeting-room-pic.jpg";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -30,6 +31,13 @@ function App() {
           {/* <Route exact path="/room2" component={Room2} /> */}
           {/* <Route exact path="/room3" component={Room3} /> */}
         </Routes>
+      </div>
+      <div className="background-pic">
+        <img
+          className="background-pic"
+          src={MeetingRoomPic}
+          alt="meeting-pic"
+        />
       </div>
     </div>
   );

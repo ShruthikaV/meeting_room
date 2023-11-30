@@ -17,16 +17,15 @@ export default class Navbar extends Component {
         <div className="nav-centre">
           <div className="nav-centre">
             <Link to="/">
-              <img src={aiqaiq} alt="AIQ meeting room" width={25} height={25} />
+              <img src={aiqaiq} alt="AIQ meeting room" width={90} height={90} />
             </Link>
-            <button
+            {/* <button
               type="buton"
               className="nav-btn"
               onClick={this.handleToggle}
             >
               {/* <FaAlignRight className="nav-icon" /> */}
-              <h1>my button</h1>
-            </button>
+            {/* </button> } */}
             <ul
               className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
             >

@@ -37,80 +37,70 @@
   }
 }
 
+.background-pic {
+  margin: 0;
+  padding: 0;
+  background-image: url('./meeting-room-pic.jpg');
+  background-size: cover; 
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  height: 100vh; 
+} 
 
 .Navbar {
-  /* position: fixed; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0.75rem 2rem;
-  background: var(--offWhite);
-  z-index: 1;
+  background-color: whites;
+  padding: 10px;
 }
 
-.nav-header {
+.nav-container {
   display: flex;
-  justify-content: space-between;
-}
-
-.nav-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.nav-icon {
-  font-size: 1.5rem;
-  color: var(--primaryColor);
+  justify-content: flex-end; 
+  align-items: center;
 }
 
 .nav-links {
-  /* height: 0;
-  overflow: hidden; */
-  transition: var(--mainTransition);
-  list-style-type: none;
+  font-style:italic;
+  list-style:none;
+  font-size:larger;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links a {
-  display: block;
-  text-decoration: none;
-  padding: 1rem 0;
-  color: var(--mainBlack);
-  transition: var(--mainTransition);
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: var(--mainSpacing);
-}
-
-.nav-links a:hover {
-  color: var(--primaryColor);
+.nav-links li {
+  margin-left: 40px; 
 }
 
 .show-nav {
-  height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 90px;
+  background-color: rgba(0, 0, 0, 0.7); 
 }
 
-@media screen and (min-width: 768px) {
-  .nav-btn {
-    display: none; 
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
   }
 
-  .nav-center {
-      max-width: 1170px;
-      margin: 0 auto;
-      display: flex;
+  .nav-container.open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7); 
   }
-      
-  .nav-links {
-      height: auto;
-      display: flex;
-      margin-left: 4rem;
-  }
-      
-  .nav-links a {
-      margin: 0 1rem;
-      padding: 0.5rem 0;
-  }
+}
+
+.nav-centre{
+  display: flex;
+  align-items: center;
+}
+
+img {
+  margin-left: 60px;
+  align-items: right;
 }

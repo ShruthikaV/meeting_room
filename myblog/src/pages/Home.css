@@ -1,23 +1,27 @@
-.container {
-    display: flex;
-    max-width: 800px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.image-container {
-    flex: 1;
-}
-
 .image {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.content-container {
-    flex: 1;
-    padding: 20px;
+.content-container{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+    text-align: center;
+    color: black;
+  }
+ 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.content{
+    font-style:normal;
+    font-size:larger;
 }
