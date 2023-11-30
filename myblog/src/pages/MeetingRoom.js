@@ -1,3 +1,4 @@
+import React from "react";
 import useApi from "../hooks/useApi";
 
 const MeetingRoom = ({ title }) => {
@@ -6,7 +7,7 @@ const MeetingRoom = ({ title }) => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  // console.log(data);
+  console.log(data);
 
   return (
     <div>
