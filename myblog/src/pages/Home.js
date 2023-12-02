@@ -1,14 +1,10 @@
 import React from "react";
 import "./Home.css";
-//import MeetingRoom from "../meeting-room-pic.jpg";
 
 function Home() {
-  // const handleToggle = () => {
-  //   console.log("Button clicked");
-  // };
   return (
     <div className="home">
-      <div className="container">
+      <div className="container background-pic">
         {/* <div className="image-container">
           <img className="image" src={MeetingRoom} alt="meeting-pic" />
         </div> */}
