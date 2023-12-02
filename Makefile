@@ -27,6 +27,10 @@ logs:
 api-shell:
 	docker exec -it api_c sh
 
+# Start the api container in the background
+api:
+	$(DC) up -d api
+
 # Enter the myblog container
 myblog-shell:
 	docker exec -it myblog_c sh
@@ -38,15 +42,16 @@ clean:
 # Display help information
 help:
 	@echo "Usage:"
-	@echo "  make build       - Build the Docker images."
-	@echo "  make up          - Start all services in detached mode."
-	@echo "  make down        - Stop all services."
-	@echo "  make rebuild     - Rebuild and restart all services."
-	@echo "  make logs        - Follow logs of all services."
-	@echo "  make api-shell   - Access the shell of the 'api' service."
-	@echo "  make myblog-shell - Access the shell of the 'myblog' service."
-	@echo "  make clean       - Stop and remove containers, networks, and volumes."
-	@echo "  make help        - Display this help message."
+	@echo "  make build       	- Build the Docker images."
+	@echo "  make up          	- Start all services in detached mode."
+	@echo "  make down        	- Stop all services."
+	@echo "  make rebuild     	- Rebuild and restart all services."
+	@echo "  make logs        	- Follow logs of all services."
+	@echo "  make api-shell   	- Access the shell of the 'api' service."
+	@echo "  make api         	- Start the 'api' service in detached mode."
+	@echo "  make myblog-shell 	- Access the shell of the 'myblog' service."
+	@echo "  make clean       	- Stop and remove containers, networks, and volumes."
+	@echo "  make help        	- Display this help message."
 
-.PHONY: all build up down rebuild logs api-shell myblog-shell clean
+.PHONY: all build up down rebuild logs api-shell myblog-shell clean api
 
