@@ -5,10 +5,10 @@ import Blog from "./pages/Blog.js";
 import Login from "./pages/Login.js";
 import MeetingRoom from "./pages/MeetingRoom.js";
 import MeetingRoomPic from "./meeting-room-pic.jpg";
+import Login from "./pages/Login";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
-
   return (
     <div className="App">
       <Navbar />
