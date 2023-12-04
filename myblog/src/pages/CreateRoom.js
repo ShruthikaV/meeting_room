@@ -51,14 +51,19 @@ const CreateRoom = () => {
 
   if (loading) {
     return (
-      <Box display="flex" justifyContent="center" alignItems="center" height="100px">
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="100px"
+      >
         <Spinner size="xl" />
       </Box>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ width: "300px" , margin: "0 auto"}}>
+    <form onSubmit={handleSubmit} style={{ width: "300px", margin: "0 auto" }}>
       <FormControl id="roomName" isRequired>
         <FormLabel>Room Name</FormLabel>
         <Input

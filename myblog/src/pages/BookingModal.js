@@ -12,15 +12,15 @@ import {
   FormLabel,
   Input,
   Select,
-  useToast
+  useToast,
 } from "@chakra-ui/react";
 
 const BookingModal = ({ rooms, isOpen, onClose }) => {
   const [bookingData, setBookingData] = useState({
-    roomId: '',
-    date: '',
-    startTime: '',
-    endTime: ''
+    roomId: "",
+    date: "",
+    startTime: "",
+    endTime: "",
   });
   const toast = useToast();
 
@@ -37,8 +37,8 @@ const BookingModal = ({ rooms, isOpen, onClose }) => {
           roomId: parseInt(bookingData.roomId),
           startTime: startDateTime,
           endTime: endDateTime,
-          userId: 1 // Hardcoded user ID for now
-        })
+          userId: 1, // Hardcoded user ID for now
+        }),
       });
 
       if (!response.ok) {
@@ -54,7 +54,7 @@ const BookingModal = ({ rooms, isOpen, onClose }) => {
       });
 
       onClose(); // Close the modal
-      setBookingData({ roomId: '', date: '', startTime: '', endTime: '' }); // Reset the form
+      setBookingData({ roomId: "", date: "", startTime: "", endTime: "" }); // Reset the form
     } catch (error) {
       toast({
         title: "Error in booking",
@@ -76,30 +76,54 @@ const BookingModal = ({ rooms, isOpen, onClose }) => {
           <ModalBody>
             <FormControl id="room" mb={4} isRequired>
               <FormLabel>Room</FormLabel>
-              <Select placeholder="Select room" onChange={(e) => setBookingData({ ...bookingData, roomId: e.target.value })}>
-                {rooms.map(room => (
-                  <option key={room.id} value={room.id}>{room.name}</option>
+              <Select
+                placeholder="Select room"
+                onChange={(e) =>
+                  setBookingData({ ...bookingData, roomId: e.target.value })
+                }
+              >
+                {rooms.map((room) => (
+                  <option key={room.id} value={room.id}>
+                    {room.name}
+                  </option>
                 ))}
               </Select>
             </FormControl>
             <FormControl id="date" mb={4} isRequired>
               <FormLabel>Date</FormLabel>
-              <Input type="date" onChange={(e) => setBookingData({ ...bookingData, date: e.target.value })} />
+              <Input
+                type="date"
+                onChange={(e) =>
+                  setBookingData({ ...bookingData, date: e.target.value })
+                }
+              />
             </FormControl>
             <FormControl id="startTime" mb={4} isRequired>
               <FormLabel>Start Time</FormLabel>
-              <Input type="time" onChange={(e) => setBookingData({ ...bookingData, startTime: e.target.value })} />
+              <Input
+                type="time"
+                onChange={(e) =>
+                  setBookingData({ ...bookingData, startTime: e.target.value })
+                }
+              />
             </FormControl>
             <FormControl id="endTime" isRequired>
               <FormLabel>End Time</FormLabel>
-              <Input type="time" onChange={(e) => setBookingData({ ...bookingData, endTime: e.target.value })} />
+              <Input
+                type="time"
+                onChange={(e) =>
+                  setBookingData({ ...bookingData, endTime: e.target.value })
+                }
+              />
             </FormControl>
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} type="submit">
               Book Room
             </Button>
-            <Button variant="ghost" onClick={onClose}>Cancel</Button>
+            <Button variant="ghost" onClick={onClose}>
+              Cancel
+            </Button>
           </ModalFooter>
         </form>
       </ModalContent>
