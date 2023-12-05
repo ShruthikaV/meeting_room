@@ -1,5 +1,7 @@
 import React from "react";
 import "./Home.css";
+import { Button } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -10,13 +12,15 @@ function Home() {
         </div> */}
         <div className="content-container">
           <h1>AIQ meeting room booking app</h1>
-          <p className="content">
+          <div className="content">
             Here's an app that allows you to reserve meeting spaces in advance,
             saving you the trouble of scheduling conflicts.
-          </p>
-          {/* <button type="buton" className="nav-btn" onClick={handleToggle}>
-            <h1>book now</h1>
-          </button> */}
+          </div>
+          <Link to="/rooms">
+            <Button mt={4} colorScheme="blue" type="submit">
+              Book Now
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

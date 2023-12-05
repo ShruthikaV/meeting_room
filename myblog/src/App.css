@@ -37,18 +37,20 @@
   }
 }
 
+
 .background-pic {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   background-image: url('./meeting-room-pic.jpg');
   background-size: cover; 
-  background-attachment:fixed;
+  /* background-attachment:fixed; */
   background-repeat: no-repeat;
-  height: 100vh; 
+  height: 180vh; 
 } 
 
+
 .Navbar {
-  background-color: whites;
+  background-color:hwb(0 100% 0%);
   padding: 10px;
 }
 
@@ -65,11 +67,14 @@
   display: flex;
   margin: 0;
   padding: 0;
+  margin-left: auto;
+  margin-right: 100px;
 }
 
-.nav-links li {
-  margin-left: 40px; 
+.nav-links li{
+  margin-right: 75px;
 }
+
 
 .show-nav {
   display: flex;
@@ -78,6 +83,11 @@
   top: 60px;
   right: 90px;
   background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.nav-content{
+  font-size: 30px;
+  margin-left: 50px;
 }
 
 @media screen and (max-width: 768px) {
