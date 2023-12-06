@@ -82,6 +82,16 @@ const CreateRoom = () => {
       >
         Create Room
       </Button>
+      {loading && (
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="100px"
+        >
+          <Spinner size="xl" />
+        </Box>
+      )}
     </form>
   );
 };

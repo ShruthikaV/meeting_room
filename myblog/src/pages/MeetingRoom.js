@@ -48,11 +48,25 @@ const MeetingRoom = () => {
   }
 
   const renderTimeSlots = (bookings) => {
-    return bookings.map((booking, index) => (
-      <Text key={index} fontSize="sm">
-        Booked: {booking.startTime} to {booking.endTime}
-      </Text>
-    ));
+    return bookings.map((booking, index) => {
+      const startTime = new Date(booking.startTime);
+      const endTime = new Date(booking.endTime);
+
+      const formattedStartTime = `${startTime.toLocaleDateString()} - Time :${startTime.toLocaleTimeString(
+        [],
+        { hour: "2-digit", minute: "2-digit" }
+      )}`;
+      const formattedEndTime = `${endTime.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      })}`;
+
+      return (
+        <Text key={index} fontSize="sm">
+          Booked: {formattedStartTime} to {formattedEndTime}
+        </Text>
+      );
+    });
   };
 
   // Transform room bookings into calendar events
