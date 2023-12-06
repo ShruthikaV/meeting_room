@@ -17,7 +17,7 @@ function Home() {
             saving you the trouble of scheduling conflicts.
           </div>
           <Link to="/rooms">
-            <Button mt={4} colorScheme="blue" type="submit">
+            <Button mt={10} colorScheme="blue" type="submit">
               Book Now
             </Button>
           </Link>

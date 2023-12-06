@@ -65,7 +65,7 @@ const CreateRoom = () => {
   return (
     <form onSubmit={handleSubmit} style={{ width: "300px", margin: "0 auto" }}>
       <FormControl id="roomName" isRequired>
-        <FormLabel>Room Name</FormLabel>
+        <FormLabel style={{ fontSize: "20px" }}>Room Name</FormLabel>
         <Input
           type="text"
           value={roomName}

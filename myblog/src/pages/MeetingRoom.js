@@ -18,6 +18,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Flex,
 } from "@chakra-ui/react";
 
 const MeetingRoom = () => {
@@ -65,14 +66,17 @@ const MeetingRoom = () => {
   }, []);
 
   return (
-    <VStack spacing={4} align="stretch">
-      <Heading as="h1" size="xl" mb={4}>
+    <VStack spacing={4} align="stretch" p={20}>
+      <Heading as="h1" size="xl" mb={4} color="teal.500">
         Meeting Rooms
       </Heading>
-      <Accordion allowToggle defaultIndex={[0]} width="100%">
+      <Accordion allowToggle defaultIndex={[0]} width="100%" boxShadow="md">
         {rooms.map((room) => (
           <AccordionItem key={room.id}>
-            <AccordionButton _expanded={{ bg: "blue.100" }}>
+            <AccordionButton
+              _expanded={{ bg: "blue.100", color: "white" }}
+              _hover={{ bg: "teal.200" }}
+            >
               <Box flex="1" textAlign="left">
                 {room.name}
               </Box>
@@ -88,13 +92,17 @@ const MeetingRoom = () => {
       <Box w="full">
         <MeetingCalendar events={events} />
       </Box>
-      <Button
-        onClick={() => setIsBookingModalOpen(true)}
-        colorScheme="teal"
-        size="md"
-      >
-        Book a New Slot
-      </Button>
+      <Flex justify="center" height="50%">
+        <Button
+          onClick={() => setIsBookingModalOpen(true)}
+          colorScheme="teal"
+          size="lg"
+          borderRadius="full"
+          width="800px"
+        >
+          Book New Slot
+        </Button>
+      </Flex>
       <BookingModal
         rooms={rooms}
         isOpen={isBookingModalOpen}
